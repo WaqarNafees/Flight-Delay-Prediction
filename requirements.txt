@@ -1,0 +1,19 @@
+# No version pins — works on Python 3.13
+streamlit
+scikit-learn
+xgboost
+lightgbm
+joblib
+pandas
+numpy
+fastapi
+uvicorn
+python-multipart
+pydantic
+mlflow
+matplotlib
+seaborn
+plotly
+requests
+scipy
+pyyaml

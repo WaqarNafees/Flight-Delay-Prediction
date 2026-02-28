@@ -1,0 +1,37 @@
+project:
+  name: "Flight Delay Prediction"
+  version: "1.0.0"
+  description: "End-to-End ML System for predicting flight delays"
+
+data:
+  raw_path: "data/raw/"
+  processed_path: "data/processed/"
+  target_column: "is_delayed"
+  delay_threshold: 15
+  feature_columns:
+    - DEP_DELAY
+    - DISTANCE
+    - DAY_OF_WEEK
+    - MONTH
+    - HOUR
+    - AIRLINE_ENC
+    - ORIGIN_ENC
+    - DEST_ENC
+    - DIST_BUCKET
+    - IS_WEEKEND
+
+model:
+  test_size: 0.2
+  random_state: 42
+  cv_folds: 5
+  model_path: "models/pipeline.pkl"
+  mlflow_experiment: "flight_delay_prediction"
+
+api:
+  host: "0.0.0.0"
+  port: 7860
+  title: "Flight Delay Predictor API"
+
+monitoring:
+  log_path: "data/inference_logs.csv"
+  drift_report_path: "reports/drift_report.html"
